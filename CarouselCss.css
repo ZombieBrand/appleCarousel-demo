@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    background: #f2f2f2;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: normal;
+    padding: 35px;
+}
+
+h1 > span {
+    font-weight: bold;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    top: -19px;
+    margin: 0;
+}
+
+h2 a {
+    color: #0196e3;
+    text-decoration: none; /*链接文字样式*/
+}
+a:hover{ /*鼠标放在a标签样式*/
+    text-decoration:underline; /*链接文字样式有下划线*/
+}
+
+.slides {
+    max-width: 920px;
+    margin: 0 auto;
+    box-shadow: 0 0 1px #ddd;
+    border: 1px solid #dddddd;
+}
+
+.window {
+    overflow: hidden;
+    box-shadow: 0 0 1px #aaa;
+
+}
+
+.window > ol {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.window li {
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    background: url("http://demo.tutorialzine.com/2009/11/beautiful-apple-gallery-slideshow/img/panel.jpg");
+    border: 1px solid white;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.controls > ol {
+    display: flex;
+    padding-left: 2px;
+}
+
+.controls li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 45px;
+    background:url("http://demo.tutorialzine.com/2009/11/beautiful-apple-gallery-slideshow/img/divider.png") no-repeat left;
+}
+.controls button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer; /*改变点击button鼠标样式*/
+}
+.controls li.aaa{
+    width:2px;
+}
+.controls .active{
+    position: relative;
+    background:radial-gradient(transparent,hsla(240,10%,10%,0.5));
+}
+/*三角形边框 before必须在after之前*/
+.controls .active::before{
+    content:'';
+    position:absolute;
+    border-top:8px solid rgb(227,227,227);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    top:0.2px;
+}
+/*三角形*/
+.controls .active::after{
+    content:'';
+    position:absolute;
+    border-top:7px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    top:0.2px;
+
+}
